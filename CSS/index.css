@@ -1,0 +1,78 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Century Gothic;
+}
+
+
+.title{
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+
+
+.title h1{
+	color: #fff;
+	font-size: 70px;
+	font-family: sans-serif, "Fruktur";
+}
+
+.hyr{
+	background: rgba(255, 136, 77,0.7);
+	padding: 40px;
+	width: 250px;
+	margin: auto;
+	height: 400px;
+	position: absolute;
+	top: 30%;
+	left: 40%;
+	border-radius: 15px;
+}
+
+form{
+	width: 240px;
+	text-align: center;
+}
+
+.hyr input{
+	width: 240px;
+	text-align: center;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #fff;
+	font-family: 'Play', sans-serif;
+	font-size: 16px;
+	font-weight: 200px;
+	padding: 10px 0;
+	transition: border 0.5s;
+	color: #fff;
+}
+
+
+
+h2{
+	color: #800000;
+}
+
+a{
+	color: yellow;
+	text-decoration: blink;
+}
+
+a:hover{
+	color: #331100;
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+::placeholder{
+	color: aliceblue;
+	opacity: 0.8;  /*sa transparent do jete elementi*/
+}

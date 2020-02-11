@@ -1,0 +1,106 @@
+if(isset($_POST["sub"])){
+				$res=mysqli_query($link,"INSERT INTO lib_pershkrimi VALUES('','$_POST[titull]','$_POST[pershkrimi]','$_POST[cmimi]','$_POST[botuesi]','$_POST[publikimi],'$_POST[tirazhi]',$_POST[nr_faqeve]')");
+				if(!$res)
+					echo "gabim nuk u shtua libri" ;
+				else
+					echo " U krijua rekord i ri";
+				}
+
+
+<label> Tel :</label><br>
+			<select id="ph">
+				<option>+355</option>
+				<option>+376</option>
+				<option>1-284</option>
+				<option>49</option>
+				<option>39</option>
+			</select>
+			<input type="number" name="tel" id="num" placeholder="Tel"><br><br>
+
+<?php 
+ 			if(isset($_POST['reg'])){
+
+ 				$emri = $_POST['emri'];
+ 				$mbiemri = $_POST['mbiemri'];
+ 				$tel = $_POST['tel'];
+ 				$email = $_POST['email'];
+ 				$pass = $_POST['pass'];
+ 				$cpass = $_POST['cpass'];
+
+ 				if($pass == $cpass){
+ 					$query= "SELECT*FROM user_reg WHERE email='$email'";
+ 					$query_check=mysqli_query($link,$query);
+
+ 					if($query_check){
+ 						if(mysqli_num_rows($query_check)>0){
+ 							echo "
+ 							<script>
+ 								alert('Email ekziston');
+ 								window.location.href='index.php';
+ 							<script>";
+ 						}
+ 						else{
+	 						$insertion ="INSERT INTO user_reg VALUES('$emri','$mbiemri','$tel','$email','$pass','$cpass')";
+	 						$run=mysqli_query($link,$insertion);
+	 						if($run){
+	 							echo "
+	 							<script>
+	 								alert('Ju u regjistruat me sukses!');
+	 								window.location.href='home.php';
+	 							<script>";
+	 						}
+	 						else{
+	 							echo "
+	 							<script>
+	 								alert('Nuk u regjistruat!');
+	 								window.location.href='regjistrohu.php';
+	 							<script>";
+	 						}
+ 						}
+ 					}
+ 					else{
+ 						echo "
+	 							<script>
+	 								alert('Gabim ne databaze!');
+	 								window.location.href='regjistrohu.php';
+	 							<script>";
+ 					}
+ 				}
+ 				else{
+ 					echo "
+	 						<script>
+	 							alert('Password-et nuk jane njesoj!');
+	 							window.location.href='regjistrohu.php';
+	 						<script>";
+ 				} 	
+ 			 
+
+ 			}
+ 			else{
+
+ 			}
+
+		 ?>
+
+
+
+
+
+
+------------------------
+read more/read less
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
